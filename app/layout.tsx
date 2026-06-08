@@ -64,7 +64,7 @@ export const metadata: Metadata = {
       "Luxury bridal makeup artist in Chennai. Timeless, glowing looks for weddings, engagements, and special occasions.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/about-2.jpg",
         width: 1200,
         height: 630,
         alt: "Artistry by Mridhula — Bridal Makeup Artist",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: "Artistry by Mridhula — Bridal Makeup Artist in Chennai",
     description:
       "Luxury bridal makeup artist in Chennai. Timeless, glowing looks for weddings, engagements, and special occasions.",
-    images: ["/og-image.jpg"],
+    images: ["/about-2.jpg"],
   },
   robots: {
     index: true,
