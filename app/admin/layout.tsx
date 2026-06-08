@@ -14,8 +14,8 @@ export default function AdminLayout({
     // Fixed overlay covers the entire viewport, hiding the public Header/Footer
     <div className="fixed inset-0 z-50 flex bg-background">
       <AdminNav />
-      <main className="flex-1 overflow-y-auto">
-        <div className="p-8">{children}</div>
+      <main className="flex-1 overflow-y-auto pt-14 lg:pt-0">
+        <div className="p-4 lg:p-8">{children}</div>
       </main>
     </div>
   );
