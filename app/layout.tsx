@@ -28,6 +28,9 @@ const karla = Karla({
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
+  icons: {
+    icon: "/favicon.png",
+  },
   title: {
     default: "Artistry by Mridhula — Bridal Makeup Artist in Chennai",
     template: "%s | Artistry by Mridhula",
