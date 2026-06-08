@@ -34,7 +34,7 @@ export function WhatsAppButton({ phone = "" }: Props) {
 
   return (
     <a
-      href={`https://wa.me/${phone.replace(/\D/g, "")}?text=Hi%20Mridhula%2C%20I%20would%20like%20to%20book%20a%20consultation.`}
+      href={`https://wa.me/${phone.replace(/\D/g, "")}?text=Hi%20Viji%2C%20I%20would%20like%20to%20book%20a%20consultation.`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

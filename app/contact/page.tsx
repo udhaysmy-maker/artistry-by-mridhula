@@ -64,7 +64,7 @@ export default async function ContactPage() {
   const s = await getSettings();
   const waPhone = (s.whatsapp || s.phone).replace(/\D/g, "");
   const waHref = waPhone
-    ? `https://wa.me/${waPhone}?text=Hi%20Mridhula%2C%20I%20would%20like%20to%20book%20a%20consultation.`
+    ? `https://wa.me/${waPhone}?text=Hi%20Viji%2C%20I%20would%20like%20to%20book%20a%20consultation.`
     : null;
 
   const contactDetails = [

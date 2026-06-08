@@ -32,7 +32,7 @@ export function CTASection() {
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
         <a
-          href="https://wa.me/919876543210?text=Hi%20Mridhula%2C%20I%20would%20like%20to%20book%20a%20consultation."
+          href="https://wa.me/919884988335?text=Hi%20Viji%2C%20I%20would%20like%20to%20book%20a%20consultation."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
