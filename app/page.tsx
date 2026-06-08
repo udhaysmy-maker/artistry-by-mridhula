@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
 import { PortfolioPreview } from "@/components/home/PortfolioPreview";
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Home", href: "/" }]} />
       <HeroSection />
       <ServicesPreview />
       <PortfolioPreview />

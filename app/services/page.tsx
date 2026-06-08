@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { PageHero } from "@/components/ui/PageHero";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { getSettings } from "@/lib/settings";
@@ -15,6 +16,92 @@ export const metadata: Metadata = {
       "Bridal makeup, reception, engagement, hairstyling, saree draping and photoshoot makeup services in Chennai.",
     url: "/services",
   },
+};
+
+const PROVIDER = {
+  "@type": "BeautySalon" as const,
+  name: "Artistry by Mridhula",
+  url: "https://www.artistrybymridhula.com",
+};
+
+const AREA_SERVED = { "@type": "City" as const, name: "Chennai" };
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      name: "Bridal Makeup",
+      description:
+        "A complete bridal experience crafted for your most important day. From the pre-wedding trial to the ceremony itself, every detail is considered — from skin prep and base selection to the final setting spray.",
+      provider: PROVIDER,
+      areaServed: AREA_SERVED,
+    },
+    {
+      "@type": "Service",
+      name: "Reception Makeup",
+      description:
+        "Reception nights call for a bolder, more dramatic look that holds through the evening's celebrations. Designed to dazzle under event lighting and flash photography.",
+      provider: PROVIDER,
+      areaServed: AREA_SERVED,
+    },
+    {
+      "@type": "Service",
+      name: "Engagement Makeup",
+      description:
+        "Soft, romantic, and effortlessly radiant — engagement makeup is about glowing skin and timeless elegance. Photographs beautifully in natural light and is comfortable throughout the ceremony.",
+      provider: PROVIDER,
+      areaServed: AREA_SERVED,
+    },
+    {
+      "@type": "Service",
+      name: "Party Makeup",
+      description:
+        "Whether it's a sangeet, mehendi, family function, or birthday celebration, party makeup is all about fun, personality, and a little extra sparkle.",
+      provider: PROVIDER,
+      areaServed: AREA_SERVED,
+    },
+    {
+      "@type": "Service",
+      name: "Groom Makeup",
+      description:
+        "Look confident, fresh, and camera-ready on your special day. Designed to enhance natural features while maintaining a clean and masculine appearance.",
+      provider: PROVIDER,
+      areaServed: AREA_SERVED,
+    },
+    {
+      "@type": "Service",
+      name: "Bridesmaid Makeup",
+      description:
+        "Complement the bride's special day with a polished and elegant look. Ensures a cohesive appearance across the bridal party that photographs beautifully and lasts throughout the event.",
+      provider: PROVIDER,
+      areaServed: AREA_SERVED,
+    },
+    {
+      "@type": "Service",
+      name: "Bridal Hairstyling",
+      description:
+        "From traditional pleated braids adorned with jasmine to contemporary waterfall curls and sleek chignons. Every style is chosen to complement your face shape, outfit, and headwear.",
+      provider: PROVIDER,
+      areaServed: AREA_SERVED,
+    },
+    {
+      "@type": "Service",
+      name: "Saree Draping",
+      description:
+        "Traditional South Indian saree draping tailored to your wedding style, including Madisar, Bridal Pattu Saree, Koora Pudavai, Lehenga Drape, Can Can Drape, and Nattu Pura Saree.",
+      provider: PROVIDER,
+      areaServed: AREA_SERVED,
+    },
+    {
+      "@type": "Service",
+      name: "Photoshoot Makeup",
+      description:
+        "Camera-ready, concept-driven makeup created in collaboration with photographers and art directors. Focused on looks that translate beautifully through a lens — bold, clean, and intentional.",
+      provider: PROVIDER,
+      areaServed: AREA_SERVED,
+    },
+  ],
 };
 
 const services = [
@@ -205,6 +292,18 @@ export default async function ServicesPage() {
     : "https://wa.me/";
   return (
     <div>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
+        ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <PageHero
         eyebrow="Services"
         title="Artistry for every occasion"

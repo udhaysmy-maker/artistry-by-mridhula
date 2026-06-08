@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
@@ -45,6 +46,12 @@ const whyChoose = [
 export default function AboutPage() {
   return (
     <div>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "About", href: "/about" },
+        ]}
+      />
       {/* Hero */}
       <PageHero
         eyebrow="About Me"

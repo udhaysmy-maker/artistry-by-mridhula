@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { PageHero } from "@/components/ui/PageHero";
 import { GalleryGrid, type GalleryItem } from "@/components/gallery/GalleryGrid";
 import { getGalleryItems } from "@/lib/gallery";
@@ -41,6 +42,12 @@ const FALLBACK: GalleryItem[] = [
 export default function GalleryPage() {
   return (
     <div>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Gallery", href: "/gallery" },
+        ]}
+      />
       <PageHero
         eyebrow="Portfolio"
         title="Gallery"

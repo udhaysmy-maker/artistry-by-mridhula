@@ -101,8 +101,9 @@ const localBusinessJsonLd = {
       description:
         "Luxury bridal makeup artist in Chennai offering wedding makeup, engagement looks, and special occasion artistry.",
       url: BASE_URL,
-      telephone: process.env.NEXT_PUBLIC_PHONE ?? "",
+      telephone: process.env.NEXT_PUBLIC_PHONE || "+91 9884988335",
       email: process.env.NEXT_PUBLIC_EMAIL ?? "",
+      image: "https://www.artistrybymridhula.com/about-2.png",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Chennai",

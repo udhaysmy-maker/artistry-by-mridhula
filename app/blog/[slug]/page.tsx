@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import {
   getPostBySlug,
   getPosts,
@@ -145,6 +146,13 @@ export default async function BlogPostPage({
 
   return (
     <article>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Blog", href: "/blog" },
+          { name: post.title, href: `/blog/${post.slug}` },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

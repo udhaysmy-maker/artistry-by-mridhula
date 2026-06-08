@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { BookingForm } from "@/components/booking/BookingForm";
 import { PageHero } from "@/components/ui/PageHero";
 
@@ -36,6 +37,12 @@ const jsonLd = {
 export default function BookPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Book Consultation", href: "/book" },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

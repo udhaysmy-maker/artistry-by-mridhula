@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { PageHero } from "@/components/ui/PageHero";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { getSettings } from "@/lib/settings";
@@ -95,6 +96,12 @@ export default async function ContactPage() {
 
   return (
     <div>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Contact", href: "/contact" },
+        ]}
+      />
       <PageHero
         eyebrow="Contact"
         title="Let's connect"

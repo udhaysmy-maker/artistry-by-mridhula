@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { PageHero } from "@/components/ui/PageHero";
 import { BlogCard, BlogCardSkeleton } from "@/components/blog/BlogCard";
 import { getPaginatedPosts } from "@/lib/blog";
@@ -32,6 +33,12 @@ export default async function BlogPage({
 
   return (
     <div>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Blog", href: "/blog" },
+        ]}
+      />
       <PageHero
         eyebrow="Blog"
         title="Beauty Tips & Guides"

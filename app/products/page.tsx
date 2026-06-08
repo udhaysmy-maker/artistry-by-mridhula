@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { PageHero } from "@/components/ui/PageHero";
 import { ProductsGrid } from "@/components/products/ProductsGrid";
 import { getProducts, getProductCategories } from "@/lib/products";
@@ -38,6 +39,12 @@ const jsonLd = {
 export default function ProductsPage() {
   return (
     <div>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Products", href: "/products" },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
