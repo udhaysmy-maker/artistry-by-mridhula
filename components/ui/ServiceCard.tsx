@@ -2,7 +2,6 @@ import Link from "next/link";
 
 export interface ServiceCardProps {
   title: string;
-  price: string;
   description: string;
   benefits: string[];
   process: string[];
@@ -10,20 +9,16 @@ export interface ServiceCardProps {
 
 export function ServiceCard({
   title,
-  price,
   description,
   benefits,
   process,
 }: ServiceCardProps) {
   return (
     <article className="flex flex-col rounded-3xl border border-border bg-card">
-      <div className="flex items-baseline justify-between border-b border-border px-8 py-6">
+      <div className="border-b border-border px-8 py-6">
         <h2 className="font-serif text-2xl font-semibold text-foreground">
           {title}
         </h2>
-        <span className="shrink-0 pl-4 text-sm font-semibold text-primary">
-          {price}
-        </span>
       </div>
 
       <div className="flex flex-1 flex-col gap-6 p-8">

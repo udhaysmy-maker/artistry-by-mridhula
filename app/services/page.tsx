@@ -24,18 +24,18 @@ const services = [
     description:
       "A complete bridal experience crafted for your most important day. From the pre-wedding trial to the ceremony itself, every detail is considered — from skin prep and base selection to the final setting spray. Expect a long-lasting, photograph-ready look that feels as beautiful in real life as it does through a lens.",
     benefits: [
-      "Pre-wedding trial session included",
-      "HD & airbrush techniques available",
-      "Premium products (MAC, Kryolan, NARS)",
-      "Includes eye lashes application",
-      "Touch-up kit provided for the day",
-      "On-location service available",
+      "Complimentary bridal makeup trial",
+      "HD, Glossy & Airbrush makeup options",
+      "Luxury products from MAC, NARS & Charlotte Tilbury",
+      "Premium lashes and contact lens assistance",
+      "Customized hairstyling and expert saree draping",
+      "Convenient on-location bridal services at your preferred venue",
     ],
     process: [
       "Consultation call to understand your vision, skin type, and outfit",
       "Trial session 1–2 weeks before — test products, refine the look",
       "Wedding morning arrival — skin prep, base, full look application",
-      "Final check, photos, and touch-up kit handover",
+      "Final check, photos, and touch-up guidance for the day",
     ],
   },
   {
@@ -46,15 +46,17 @@ const services = [
     benefits: [
       "Dramatic, evening-appropriate look",
       "Long-wear formulas for all-night hold",
-      "Lashes included",
+      "Lens & Lashes included",
       "Suited for event and indoor lighting",
+      "Personalized hairstyling",
       "On-location service available",
+      
     ],
     process: [
       "Brief consultation on outfit, jewellery, and desired vibe",
       "Skin preparation and full base application",
       "Eye, cheek, and lip application with final setting",
-      "Styling photos and touch-up product guidance",
+      "Styling photos and touch-up guidance",
     ],
   },
   {
@@ -65,9 +67,10 @@ const services = [
     benefits: [
       "Soft glam or full glam options",
       "Dewy, luminous skin finish",
-      "Lashes optional",
+      "Nails & Lashes optional",
       "Comfortable for long ceremonies",
       "On-location service available",
+      "Tailored Hairstyling and Saree Draping"
     ],
     process: [
       "Quick consultation on outfit colour and setting",
@@ -85,7 +88,8 @@ const services = [
       "Festive and fun looks",
       "Quick application — 45 to 60 mins",
       "Wide range of styles",
-      "Lashes optional",
+      "Lens & Lashes optional",
+      "Hairstyling of your choice",
     ],
     process: [
       "Quick brief on the occasion and outfit",
@@ -107,7 +111,7 @@ const services = [
     ],
     process: [
       "Consultation on style preference and headwear",
-      "Hair preparation — wash, blow-dry if needed",
+      "Hair preparation — blow-dry if needed",
       "Styling application with finishing products",
       "Accessory and flower placement",
     ],
@@ -116,9 +120,9 @@ const services = [
     title: "Saree Draping",
     price: "Starting from ₹2,500",
     description:
-      "Flawless saree draping in all regional styles — South Indian Madisar, Nivi, Gujarati, Maharashtrian Nauvari, Bengali, and more. A perfectly draped saree elevates the entire look; it should be comfortable, structured, and hold through the day.",
+      "Traditional South Indian saree draping tailored to your wedding style, including Madisar, Bridal Pattu Saree, Koora Pudavai, Lehenga Drape, Can Can Drape, Nattu Pura Saree, and Pre-Pleating. A perfectly draped saree elevates the entire look; it should be comfortable, structured, and hold through the day.",
     benefits: [
-      "All Indian regional draping styles",
+      "South Indian regional draping styles",
       "Petticoat pinning and blouse adjustment included",
       "Pleat pressing if required",
       "Holds throughout the full event",
@@ -137,7 +141,7 @@ const services = [
     description:
       "Camera-ready, concept-driven makeup created in collaboration with photographers and art directors. Whether it's a pre-wedding shoot, brand editorial, or portfolio project, this service focuses on looks that translate beautifully through a lens — bold, clean, and intentional.",
     benefits: [
-      "HD and airbrush techniques",
+      "Personalized concept and look consultation",
       "Mood-board driven look planning",
       "Multiple looks available per session",
       "On-set touch-ups throughout shoot",
@@ -148,6 +152,47 @@ const services = [
       "Look planning — skin tone, lighting, concept",
       "Full look application per concept",
       "On-set adjustments between shots",
+    ],
+  },
+  {
+    title: "Groom Makeup",
+    price: "Starting from ₹6,000",
+    description:
+      "Look confident, fresh, and camera-ready on your special day. Our groom makeup service is designed to enhance your natural features while maintaining a clean and masculine appearance. From skin preparation and grooming to hairstyling and touch-ups, every detail is carefully handled to ensure you look your absolute best throughout the celebrations.",
+    benefits: [
+      "Personalized skin preparation and grooming",
+      "Natural HD makeup for a flawless, camera-ready look",
+      "Professional hairstyling tailored to your preference",
+      "Beard shaping and grooming assistance",
+      "Premium products from MAC, NARS & Charlotte Tilbury",
+      "On-location grooming services at your preferred venue",
+    ],
+    process: [
+      "Consultation to understand your style, outfit, and event requirements",
+      "Skin preparation, grooming, and beard detailing",
+      "Hairstyling and natural makeup application",
+      "Final touch-ups and grooming check before the event",
+    ],
+  },
+  {
+    title: "Bridesmaid Makeup",
+    price: "Starting from ₹6,000",
+    description:
+      "Complement the bride's special day with a polished and elegant look. Our bridesmaid makeup service is designed to enhance your natural beauty while ensuring a cohesive appearance across the bridal party. Whether you prefer a soft, natural finish or a glamorous celebration look, we create styles that photograph beautifully and last throughout the event.",
+    benefits: [
+      "Personalized makeup consultation",
+      "Soft glam, natural, or party makeup looks",
+      "Professional hairstyling tailored to your outfit",
+      "Premium products from MAC, NARS & Charlotte Tilbury",
+      "Saree draping assistance available",
+      "Lashes application available upon request",
+      "On-location beauty services at your preferred venue",
+    ],
+    process: [
+      "Consultation to understand outfit colors, theme, and preferences",
+      "Skin preparation and makeup planning",
+      "Makeup application and hairstyling",
+      "Final touch-ups before the ceremony or photoshoot",
     ],
   },
 ];

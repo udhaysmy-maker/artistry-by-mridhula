@@ -66,7 +66,7 @@ export function ServicesPreview() {
     <section className="mx-auto max-w-6xl px-5 py-16">
       <div className="mb-12 text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-          What I Offer
+          What We Offer
         </p>
         <h2 className="mt-2 font-serif text-4xl font-semibold text-foreground">
           Services Tailored for You

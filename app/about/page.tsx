@@ -4,23 +4,23 @@ import Link from "next/link";
 import { PageHero } from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
-  title: "About Mridhula",
+  title: "About Viji",
   description:
-    "Meet Mridhula — a luxury bridal makeup artist in Chennai with 8+ years of experience crafting timeless looks for weddings, receptions, and special occasions.",
+    "Meet Viji — a luxury bridal makeup artist in Chennai with 5+ years of experience crafting timeless looks for weddings, receptions, and special occasions.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Mridhula | Artistry by Mridhula",
+    title: "About Viji | Artistry by Mridhula",
     description:
-      "Luxury bridal makeup artist in Chennai with 8+ years of experience and 300+ happy brides.",
+      "Luxury bridal makeup artist in Chennai with 5+ years of experience and 150+ happy brides.",
     url: "/about",
   },
 };
 
 const stats = [
-  { value: "8+", label: "Years of experience" },
-  { value: "300+", label: "Happy brides" },
-  { value: "150+", label: "Weddings" },
-  { value: "50+", label: "Editorial shoots" },
+  { value: "5+", label: "Years of experience" },
+  { value: "150+", label: "Happy brides" },
+  { value: "100+", label: "Weddings" },
+  { value: "30+", label: "Editorial shoots" },
 ];
 
 const whyChoose = [
@@ -49,7 +49,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Me"
         title="The artist behind Artistry by Mridhula"
-        subtitle="Eight years of turning nerves into confidence and faces into art — one bride at a time."
+        subtitle="Five years of turning nerves into confidence and faces into art — one bride at a time."
       />
 
       {/* Portrait + Bio */}
@@ -57,8 +57,8 @@ export default function AboutPage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="overflow-hidden rounded-[2rem] shadow-xl">
             <Image
-              src="/assets/about.jpg"
-              alt="Mridhula — bridal makeup artist in her studio"
+              src="/assets/about-2.png"
+              alt="Viji — bridal makeup artist in her studio"
               width={1200}
               height={1400}
               className="h-full w-full object-cover"
@@ -71,14 +71,14 @@ export default function AboutPage() {
               My Story
             </p>
             <h2 className="mt-2 font-serif text-3xl font-semibold leading-snug text-foreground">
-              Hi, I&apos;m Mridhula — and I believe every bride deserves to feel
+              Hi, I&apos;m Viji — and I believe every bride deserves to feel
               extraordinary.
             </h2>
             <p className="mt-5 text-muted-foreground">
               I discovered my passion for makeup at sixteen, practising on my
               cousins and neighbours before anyone would let me near a bridal
-              face. Eight years later, I&apos;ve had the privilege of being a
-              part of over 300 beautiful love stories across Chennai, Coimbatore,
+              face. Five years later, I&apos;ve had the privilege of being a
+              part of over 150 beautiful love stories across Chennai, Coimbatore,
               and beyond.
             </p>
             <p className="mt-4 text-muted-foreground">
