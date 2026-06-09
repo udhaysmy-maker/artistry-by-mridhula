@@ -133,7 +133,10 @@ const localBusinessJsonLd = {
       ],
       priceRange: "₹₹₹",
       sameAs: [
-        process.env.NEXT_PUBLIC_INSTAGRAM_URL,
+        process.env.NEXT_PUBLIC_INSTAGRAM_URL ||
+          (process.env.NEXT_PUBLIC_INSTAID
+            ? `https://www.instagram.com/${process.env.NEXT_PUBLIC_INSTAID.replace(/^@/, "")}/`
+            : undefined),
         process.env.NEXT_PUBLIC_FACEBOOK_URL,
       ].filter(Boolean),
     },
