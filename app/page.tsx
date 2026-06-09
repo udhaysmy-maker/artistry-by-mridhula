@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
 import { PortfolioPreview } from "@/components/home/PortfolioPreview";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { FAQSection } from "@/components/home/FAQSection";
 import { InstagramSection } from "@/components/home/InstagramSection";
 import { CTASection } from "@/components/home/CTASection";
 
@@ -31,6 +32,7 @@ export default async function HomePage() {
       <ServicesPreview />
       <PortfolioPreview />
       <TestimonialsSection />
+      <FAQSection />
       <InstagramSection />
       <CTASection />
     </>
