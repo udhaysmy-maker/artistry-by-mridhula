@@ -33,6 +33,7 @@ export async function createBlog(
   if (error) return { error: error.message };
 
   revalidatePath("/blog");
+  revalidatePath(`/blog/${slug}`);
   revalidatePath("/admin/blogs");
   redirect("/admin/blogs");
 }

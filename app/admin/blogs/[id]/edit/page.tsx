@@ -25,13 +25,13 @@ export default async function EditBlogPage({ params }: Props) {
   const boundAction = updateBlog.bind(null, id);
 
   return (
-    <div className="max-w-2xl space-y-6">
+    <div className="space-y-6">
       <div>
         <h1 className="font-serif text-3xl font-semibold text-foreground">
           Edit Blog Post
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Slug: /blog/{post.slug}
+          /blog/{post.slug}
         </p>
       </div>
       <BlogForm action={boundAction} post={post} />

@@ -54,7 +54,7 @@ export default function ProductsPage() {
 
       <PageHero
         eyebrow="Products"
-        title="Mridhula's Recommendations"
+        title="Viji's Recommendations"
         subtitle="Handpicked makeup kits, foundations, brushes, and bridal accessories — products I use, trust, and recommend."
       />
 

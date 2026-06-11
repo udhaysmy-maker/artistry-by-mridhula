@@ -5,7 +5,7 @@ import type { NextRequest } from "next/server";
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Public auth pages pass through
+  // /login itself always passes through — avoids redirect loops
   if (pathname === "/login") return NextResponse.next();
 
   let supabaseResponse = NextResponse.next({ request });
@@ -17,6 +17,7 @@ export async function proxy(request: NextRequest) {
       cookies: {
         getAll: () => request.cookies.getAll(),
         setAll: (cookiesToSet) => {
+          // Write refreshed tokens to both request and response so they propagate
           cookiesToSet.forEach(({ name, value }) =>
             request.cookies.set(name, value),
           );
@@ -29,15 +30,30 @@ export async function proxy(request: NextRequest) {
     },
   );
 
-  // Refresh session — must be called before checking user
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  // IMPORTANT: getUser() must run immediately after createServerClient.
+  // It refreshes the session and writes new tokens via setAll above.
+  let user = null;
+  try {
+    const { data, error } = await supabase.auth.getUser();
+    if (!error) user = data.user;
+  } catch {
+    // AuthApiError (e.g. "Invalid Refresh Token: Refresh Token Not Found")
+    // Treat as unauthenticated and clear stale cookies below.
+  }
 
   if (!user) {
     const loginUrl = new URL("/login", request.url);
     loginUrl.searchParams.set("next", pathname);
-    return NextResponse.redirect(loginUrl);
+    const redirectResponse = NextResponse.redirect(loginUrl);
+
+    // Clear stale Supabase auth cookies so the login page starts clean
+    request.cookies.getAll().forEach(({ name }) => {
+      if (name.startsWith("sb-")) {
+        redirectResponse.cookies.delete(name);
+      }
+    });
+
+    return redirectResponse;
   }
 
   return supabaseResponse;

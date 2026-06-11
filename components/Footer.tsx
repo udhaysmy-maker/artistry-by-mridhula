@@ -51,11 +51,13 @@ export async function Footer() {
     <footer className="mt-24 border-t border-border/60 bg-secondary/40">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-3">
         <div>
-          <Link
-            href="/"
-            className="font-serif text-2xl font-semibold text-foreground"
-          >
-            Artistry<span className="text-primary"> by Mridhula</span>
+          <Link href="/" className="flex flex-col leading-none" aria-label="Artistry by Mridhula — Home">
+            <span className="font-serif text-3xl font-bold italic tracking-tight text-foreground">
+              Artistry
+            </span>
+            <span className="text-[0.6rem] font-semibold uppercase tracking-[0.28em] text-primary">
+              by Mridhula
+            </span>
           </Link>
           <p className="mt-3 max-w-xs text-sm text-muted-foreground">
             Timeless, glowing makeup artistry for life&apos;s most beautiful
@@ -131,7 +133,16 @@ export async function Footer() {
         </div>
       </div>
       <div className="border-t border-border/60 py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} {s.business_name}. All rights reserved.
+        <p>© {new Date().getFullYear()} {s.business_name}. All rights reserved.</p>
+        <div className="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1">
+          <Link href="/privacy-policy" className="hover:text-primary transition-colors">
+            Privacy Policy
+          </Link>
+          <span aria-hidden="true">·</span>
+          <Link href="/affiliate-disclosure" className="hover:text-primary transition-colors">
+            Affiliate Disclosure
+          </Link>
+        </div>
       </div>
     </footer>
   );
