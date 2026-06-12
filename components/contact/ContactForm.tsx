@@ -31,7 +31,7 @@ const EMPTY_FORM: FormState = {
   message: "",
 };
 
-type Status = "idle" | "submitting" | "success" | "error";
+type Status = "idle" | "submitting" | "success" | "error"| "rate-limited";
 
 const fieldClass =
   "w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/20";
@@ -52,12 +52,16 @@ export function ContactForm() {
         e: React.ChangeEvent<
           HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
         >,
-      ) => setForm((prev) => ({ ...prev, [name]: e.target.value })),
+      ) => {
+        setForm((prev) => ({ ...prev, [name]: e.target.value }));
+        if (status === "error" || status === "rate-limited") setStatus("idle");
+      },
     };
   }
 
   async function handleSubmit(e: { preventDefault(): void }) {
     e.preventDefault();
+    if (form.message.trim().length < 10) return;
     setStatus("submitting");
     try {
       const res = await fetch("/api/contact", {
@@ -72,9 +76,13 @@ export function ContactForm() {
           message: form.message,
         }),
       });
+      if (res.status === 429) {
+        setStatus("rate-limited");
+        return;
+      }
       if (!res.ok) {
-        const json = (await res.json()) as { message?: string };
-        throw new Error(json.message ?? "Submission failed");
+        setStatus("error");
+        return;
       }
       setStatus("success");
       setForm(EMPTY_FORM);
@@ -208,11 +216,25 @@ export function ContactForm() {
           placeholder="Tell me about your event, the look you have in mind, and any other details..."
           className={`${fieldClass} resize-none`}
         />
+        {form.message.length > 0 && form.message.length < 10 && (
+          <p className="mt-1.5 text-xs text-muted-foreground">
+            Please write at least{" "}
+            <span className="font-medium text-primary">
+              {10 - form.message.length} more character{10 - form.message.length !== 1 ? "s" : ""}
+            </span>
+          </p>
+        )}
       </div>
 
       {status === "error" && (
-        <p role="alert" className="text-sm text-destructive">
-          Something went wrong. Please try again or reach out on WhatsApp.
+        <p role="alert" className="text-sm text-amber-600">
+          Something went wrong. Please try again or{" "}
+          <a href="https://wa.me/919884988335" className="underline underline-offset-2">reach out on WhatsApp</a>.
+        </p>
+      )}
+      {status === "rate-limited" && (
+        <p role="alert" className="text-sm text-amber-600">
+          We already received your message and will get back to you soon. Please wait a while before sending again.
         </p>
       )}
 

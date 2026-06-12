@@ -16,6 +16,7 @@ export async function createBlog(
   const excerpt = (formData.get("excerpt") as string)?.trim() || null;
   const content = (formData.get("content") as string)?.trim();
   const cover_image = (formData.get("cover_image") as string)?.trim() || null;
+  const cover_thumbnail_url = (formData.get("cover_thumbnail_url") as string)?.trim() || null;
   const published_at =
     (formData.get("published_at") as string)?.trim() ||
     new Date().toISOString();
@@ -28,7 +29,7 @@ export async function createBlog(
   const supabase = createSupabaseServerClient();
   const { error } = await supabase
     .from("blogs")
-    .insert({ title, slug, excerpt, content, cover_image, published_at });
+    .insert({ title, slug, excerpt, content, cover_image, cover_thumbnail_url, published_at });
 
   if (error) return { error: error.message };
 
@@ -50,6 +51,7 @@ export async function updateBlog(
   const excerpt = (formData.get("excerpt") as string)?.trim() || null;
   const content = (formData.get("content") as string)?.trim();
   const cover_image = (formData.get("cover_image") as string)?.trim() || null;
+  const cover_thumbnail_url = (formData.get("cover_thumbnail_url") as string)?.trim() || null;
   const published_at = (formData.get("published_at") as string)?.trim();
 
   if (!title) return { error: "Title is required" };
@@ -66,6 +68,7 @@ export async function updateBlog(
       excerpt,
       content,
       cover_image,
+      cover_thumbnail_url,
       ...(published_at ? { published_at } : {}),
     })
     .eq("id", id);

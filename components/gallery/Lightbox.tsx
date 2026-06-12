@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useCallback } from "react";
-import Image from "next/image";
 
 interface LightboxImage {
   src: string;
+  srcWebp?: string;
+  originalSrc?: string;
+  originalWebp?: string;
   alt: string;
 }
 
@@ -107,16 +109,22 @@ export function Lightbox({ images, index, onClose, onPrev, onNext }: LightboxPro
         </button>
       )}
 
-      <div onClick={(e) => e.stopPropagation()}>
-        <Image
-          src={img.src}
+      <picture onClick={(e) => e.stopPropagation()}>
+        {(img.originalWebp ?? img.srcWebp) && (
+          <source
+            srcSet={img.originalWebp ?? img.srcWebp}
+            type="image/webp"
+          />
+        )}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={img.originalSrc ?? img.src}
           alt={img.alt}
-          width={1024}
-          height={1280}
-          className="max-h-[85vh] max-w-full rounded-2xl object-contain"
-          sizes="(max-width: 768px) 100vw, 80vw"
+          className="max-h-[85vh] max-w-[90vw] rounded-2xl object-contain"
+          loading="eager"
+          decoding="async"
         />
-      </div>
+      </picture>
 
       <p className="absolute bottom-5 left-1/2 -translate-x-1/2 text-xs text-white/70">
         {index + 1} / {images.length}

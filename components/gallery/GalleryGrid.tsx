@@ -10,7 +10,10 @@ import {
 } from "./GalleryFilter";
 
 export interface GalleryItem {
-  src: string;
+  src: string;           // thumbnail JPEG (fallback)
+  srcWebp?: string;      // thumbnail WebP (preferred)
+  originalSrc?: string;  // full-size JPEG (lightbox fallback)
+  originalWebp?: string; // full-size WebP (lightbox preferred)
   alt: string;
   category: Exclude<GalleryCategory, "All">;
 }
@@ -69,7 +72,7 @@ export function GalleryGrid({ items }: GalleryGridProps) {
               aria-label={`View: ${img.alt}`}
             >
               <Image
-                src={img.src}
+                src={img.srcWebp ?? img.src}
                 alt={img.alt}
                 fill
                 loading={i < 4 ? "eager" : "lazy"}

@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
     return Response.json({ error: error.message }, { status: 500 });
   }
 
-  void sendTelegramAlert(
+  await sendTelegramAlert(
     `📅 <b>New Booking Request</b>\n\n` +
     `👤 <b>${name.trim()}</b>\n` +
     `📞 ${phone.trim()}\n` +

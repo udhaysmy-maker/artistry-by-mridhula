@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useRef, useState, useCallback } from "react";
-import { ImageUploader } from "./ImageUploader";
+import { BlogCoverUploader } from "./BlogCoverUploader";
 import type { BlogPost } from "@/lib/blog";
 import {
   renderContent,
@@ -220,8 +220,9 @@ export function BlogForm({ action, post }: BlogFormProps) {
   const [slug, setSlug] = useState(post?.slug ?? "");
   const [excerpt, setExcerpt] = useState(post?.excerpt ?? "");
   const [content, setContent] = useState(post?.content ?? "");
-  // cover_image is managed by ImageUploader's own hidden input
   const [tab, setTab] = useState<EditorTab>("write");
+  const [lastUploadedUrl, setLastUploadedUrl] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const imageInputRef = useRef<HTMLInputElement>(null);
@@ -296,24 +297,29 @@ export function BlogForm({ action, post }: BlogFormProps) {
     const file = e.target.files?.[0];
     if (!file) return;
     setImageUploading(true);
+    setLastUploadedUrl(null);
     try {
       const fd = new FormData();
       fd.append("file", file);
-      const res = await fetch("/api/admin/upload?bucket=blog-images", {
-        method: "POST",
-        body: fd,
-      });
+      const res = await fetch("/api/admin/blog-images", { method: "POST", body: fd });
       if (!res.ok) throw new Error(await res.text());
-      const { url } = await res.json() as { url: string };
+      const json = await res.json() as { originalWebpUrl: string; thumbnailWebpUrl: string };
       const caption = file.name.replace(/\.[^.]+$/, "").replace(/[-_]/g, " ");
-      insertBlock(`![${caption}](${url})`);
+      insertBlock(`![${caption}](${json.originalWebpUrl})`);
+      setLastUploadedUrl(json.originalWebpUrl);
     } catch {
       alert("Image upload failed. Please try again.");
     } finally {
       setImageUploading(false);
-      // Reset so the same file can be selected again
       if (imageInputRef.current) imageInputRef.current.value = "";
     }
+  }
+
+  async function copyLastUrl() {
+    if (!lastUploadedUrl) return;
+    await navigator.clipboard.writeText(lastUploadedUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   }
 
   // ── Preview content nodes ────────────────────────────────────────────────────
@@ -510,12 +516,26 @@ export function BlogForm({ action, post }: BlogFormProps) {
           </div>
 
           {/* Cover Image */}
-          <ImageUploader
-            bucket="blog-images"
-            name="cover_image"
-            defaultUrl={post?.cover_image}
-            label="Cover Image"
+          <BlogCoverUploader
+            defaultOriginalUrl={post?.cover_image}
+            defaultThumbnailUrl={post?.cover_thumbnail_url}
           />
+
+          {/* Copy URL toast — shown after inline image upload */}
+          {lastUploadedUrl && (
+            <div className="flex items-center gap-2 rounded-lg border border-border bg-secondary/50 px-3 py-2 text-xs">
+              <span className="min-w-0 flex-1 truncate text-muted-foreground">
+                Last uploaded: <span className="font-mono text-foreground">{lastUploadedUrl.split("/").pop()}</span>
+              </span>
+              <button
+                type="button"
+                onClick={copyLastUrl}
+                className="shrink-0 rounded-md bg-primary px-2.5 py-1 text-[10px] font-semibold text-primary-foreground hover:bg-primary/90"
+              >
+                {copied ? "Copied!" : "Copy URL"}
+              </button>
+            </div>
+          )}
 
           {/* Syntax Reference */}
           <SyntaxReference />

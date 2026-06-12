@@ -13,6 +13,7 @@ export type Database = {
         Row: {
           content: string;
           cover_image: string | null;
+          cover_thumbnail_url: string | null;
           created_at: string;
           excerpt: string | null;
           id: string;
@@ -23,6 +24,7 @@ export type Database = {
         Insert: {
           content: string;
           cover_image?: string | null;
+          cover_thumbnail_url?: string | null;
           created_at?: string;
           excerpt?: string | null;
           id?: string;
@@ -33,6 +35,7 @@ export type Database = {
         Update: {
           content?: string;
           cover_image?: string | null;
+          cover_thumbnail_url?: string | null;
           created_at?: string;
           excerpt?: string | null;
           id?: string;
@@ -42,12 +45,39 @@ export type Database = {
         };
         Relationships: [];
       };
+      blog_images: {
+        Row: {
+          alt_text: string | null;
+          created_at: string;
+          id: string;
+          original_webp_url: string;
+          thumbnail_webp_url: string;
+        };
+        Insert: {
+          alt_text?: string | null;
+          created_at?: string;
+          id?: string;
+          original_webp_url: string;
+          thumbnail_webp_url: string;
+        };
+        Update: {
+          alt_text?: string | null;
+          created_at?: string;
+          id?: string;
+          original_webp_url?: string;
+          thumbnail_webp_url?: string;
+        };
+        Relationships: [];
+      };
       gallery_items: {
         Row: {
           category: string | null;
           created_at: string;
           id: string;
           image_url: string;
+          original_webp_url: string | null;
+          thumbnail_url: string | null;
+          thumbnail_webp_url: string | null;
           title: string;
         };
         Insert: {
@@ -55,6 +85,9 @@ export type Database = {
           created_at?: string;
           id?: string;
           image_url: string;
+          original_webp_url?: string | null;
+          thumbnail_url?: string | null;
+          thumbnail_webp_url?: string | null;
           title: string;
         };
         Update: {
@@ -62,6 +95,9 @@ export type Database = {
           created_at?: string;
           id?: string;
           image_url?: string;
+          original_webp_url?: string | null;
+          thumbnail_url?: string | null;
+          thumbnail_webp_url?: string | null;
           title?: string;
         };
         Relationships: [];

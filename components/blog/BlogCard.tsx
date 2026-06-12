@@ -12,9 +12,9 @@ export function BlogCard({ post, priority = false }: BlogCardProps) {
   return (
     <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-lg">
       <Link href={`/blog/${post.slug}`} className="block overflow-hidden">
-        {post.cover_image ? (
+        {(post.cover_thumbnail_url ?? post.cover_image) ? (
           <Image
-            src={post.cover_image}
+            src={post.cover_thumbnail_url ?? post.cover_image!}
             alt={post.title}
             width={800}
             height={500}

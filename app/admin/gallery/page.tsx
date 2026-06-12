@@ -9,7 +9,7 @@ export default async function AdminGalleryPage() {
   const supabase = createSupabaseServerClient();
   const { data: items } = await supabase
     .from("gallery_items")
-    .select("id, title, image_url, category")
+    .select("id, title, image_url, thumbnail_url, category")
     .order("created_at", { ascending: false });
 
   return (
@@ -45,7 +45,7 @@ export default async function AdminGalleryPage() {
               >
                 <div className="relative aspect-[4/3] w-full">
                   <Image
-                    src={item.image_url}
+                    src={item.thumbnail_url ?? item.image_url}
                     alt={item.title}
                     fill
                     className="object-cover"

@@ -100,7 +100,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  void sendTelegramAlert(
+  await sendTelegramAlert(
     `💬 <b>New Message</b>\n\n` +
     `👤 <b>${data.name}</b>\n` +
     `📞 ${data.phone}\n` +

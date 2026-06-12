@@ -69,7 +69,10 @@ async function GalleryContent() {
     const rows = await getGalleryItems();
     if (rows.length > 0) {
       items = rows.map((row) => ({
-        src: row.image_url,
+        src:          row.thumbnail_url     ?? row.image_url,
+        srcWebp:      row.thumbnail_webp_url ?? undefined,
+        originalSrc:  row.image_url,
+        originalWebp: row.original_webp_url  ?? undefined,
         alt: row.title,
         category: (VALID_CATEGORIES.has(row.category ?? "")
           ? row.category

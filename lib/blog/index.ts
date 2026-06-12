@@ -4,7 +4,7 @@ import type { Tables } from "@/lib/supabase/types";
 export type BlogPost = Tables<"blogs">;
 
 const LIST_FIELDS =
-  "id, title, slug, excerpt, cover_image, published_at, created_at";
+  "id, title, slug, excerpt, cover_image, cover_thumbnail_url, published_at, created_at";
 
 export async function getPosts(options?: {
   limit?: number;
