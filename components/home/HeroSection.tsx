@@ -37,7 +37,7 @@ export function HeroSection() {
           <div className="overflow-hidden rounded-[2rem] shadow-xl">
             <Image
               src="/assets/hero-1.png"
-              alt="Mridhula — luxury bridal makeup artist in Chennai"
+              alt="Mridhula — Professional bridal makeup artist in Chennai"
               width={1280}
               height={1600}
               priority

@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { sendTelegramAlert } from "@/lib/telegram";
 
 const EVENT_TYPES = [
   "bridal",
@@ -61,6 +62,16 @@ export async function POST(request: NextRequest) {
   if (error) {
     return Response.json({ error: error.message }, { status: 500 });
   }
+
+  void sendTelegramAlert(
+    `📅 <b>New Booking Request</b>\n\n` +
+    `👤 <b>${name.trim()}</b>\n` +
+    `📞 ${phone.trim()}\n` +
+    (event_type ? `💍 Event: ${event_type}\n` : "") +
+    (event_date ? `📆 Date: ${event_date}\n` : "") +
+    (location?.trim() ? `📍 Location: ${location.trim()}\n` : "") +
+    (notes?.trim() ? `\n📝 ${notes.trim()}` : "")
+  );
 
   return Response.json({ ok: true }, { status: 201 });
 }

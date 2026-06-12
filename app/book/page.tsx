@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Book Your Bridal Makeup | Artistry by Mridhula",
     description:
-      "Send a booking request for your wedding or special event makeup. Artistry by Mridhula — Chennai's luxury bridal makeup artist.",
+      "Send a booking request for your wedding or special event makeup. Artistry by Mridhula — Chennai's Professional bridal makeup artist.",
   },
 };
 

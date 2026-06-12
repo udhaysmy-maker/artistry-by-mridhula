@@ -113,7 +113,7 @@ const services = [
     benefits: [
       "Complimentary bridal makeup trial",
       "HD, Glossy & Airbrush makeup options",
-      "Luxury products from MAC, NARS & Charlotte Tilbury",
+      "Professional products from MAC, NARS & Charlotte Tilbury",
       "Premium lashes and contact lens assistance",
       "Customized hairstyling and expert saree draping",
       "Convenient on-location bridal services at your preferred venue",

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Portfolio Gallery | Artistry by Mridhula",
     description:
-      "Bridal, reception, engagement and photoshoot makeup looks by Mridhula — Chennai's luxury bridal makeup artist.",
+      "Bridal, reception, engagement and photoshoot makeup looks by Mridhula — Chennai's Professional bridal makeup artist.",
     url: "/gallery",
   },
 };

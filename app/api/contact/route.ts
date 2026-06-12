@@ -2,6 +2,7 @@ import type { NextRequest } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { checkRateLimit } from "@/lib/rate-limit";
 import type { InsertPayload } from "@/lib/supabase/types";
+import { sendTelegramAlert } from "@/lib/telegram";
 
 interface ContactPayload {
   name: string;
@@ -98,6 +99,16 @@ export async function POST(request: NextRequest) {
       { status: 500 },
     );
   }
+
+  void sendTelegramAlert(
+    `💬 <b>New Message</b>\n\n` +
+    `👤 <b>${data.name}</b>\n` +
+    `📞 ${data.phone}\n` +
+    `📧 ${data.email}\n` +
+    (data.service ? `💄 Service: ${data.service}\n` : "") +
+    (data.eventDate ? `📅 Event: ${data.eventDate}\n` : "") +
+    `\n${data.message}`
+  );
 
   return Response.json(
     { message: "Message received. We'll be in touch within 24 hours." },

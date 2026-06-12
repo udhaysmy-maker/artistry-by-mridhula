@@ -7,12 +7,12 @@ import { PageHero } from "@/components/ui/PageHero";
 export const metadata: Metadata = {
   title: "About Viji",
   description:
-    "Meet Viji — a luxury bridal makeup artist in Chennai with 5+ years of experience crafting timeless looks for weddings, receptions, and special occasions.",
+    "Meet Viji — a Professional bridal makeup artist in Chennai with 5+ years of experience crafting timeless looks for weddings, receptions, and special occasions.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Viji | Artistry by Mridhula",
     description:
-      "Luxury bridal makeup artist in Chennai with 5+ years of experience and 150+ happy brides.",
+      "Professional bridal makeup artist in Chennai with 5+ years of experience and 150+ happy brides.",
     url: "/about",
   },
 };

@@ -41,12 +41,12 @@ export const metadata: Metadata = {
     template: "%s | Artistry by Mridhula",
   },
   description:
-    "Luxury bridal makeup artist in Chennai. Timeless, glowing looks for weddings, engagements, and special occasions. Book Mridhula for your perfect bridal look.",
+    "Professional bridal makeup artist in Chennai. Timeless, glowing looks for weddings, engagements, and special occasions. Book Mridhula for your perfect bridal look.",
   keywords: [
     "bridal makeup artist Chennai",
     "wedding makeup Chennai",
     "South Indian bridal makeup",
-    "luxury bridal makeup",
+    "Professional bridal makeup",
     "makeup artist Chennai",
     "Artistry by Mridhula",
   ],
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     siteName: "Artistry by Mridhula",
     title: "Artistry by Mridhula — Bridal Makeup Artist in Chennai",
     description:
-      "Luxury bridal makeup artist in Chennai. Timeless, glowing looks for weddings, engagements, and special occasions.",
+      "Professional bridal makeup artist in Chennai. Timeless, glowing looks for weddings, engagements, and special occasions.",
     images: [
       {
         url: "/about-2.png",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Artistry by Mridhula — Bridal Makeup Artist in Chennai",
     description:
-      "Luxury bridal makeup artist in Chennai. Timeless, glowing looks for weddings, engagements, and special occasions.",
+      "Professional bridal makeup artist in Chennai. Timeless, glowing looks for weddings, engagements, and special occasions.",
     images: ["/about-2.png"],
   },
   robots: {
@@ -104,7 +104,7 @@ const localBusinessJsonLd = {
       "@id": `${BASE_URL}/#business`,
       name: "Artistry by Mridhula",
       description:
-        "Luxury bridal makeup artist in Chennai offering wedding makeup, engagement looks, and special occasion artistry.",
+        "Professional bridal makeup artist in Chennai offering wedding makeup, engagement looks, and special occasion artistry.",
       url: BASE_URL,
       telephone: process.env.NEXT_PUBLIC_PHONE || "+91 9884988335",
       email: process.env.NEXT_PUBLIC_EMAIL ?? "",

@@ -11,7 +11,7 @@ export const revalidate = 1800;
 export const metadata: Metadata = {
   title: "Blog — Bridal Makeup Tips & Guides",
   description:
-    "Expert bridal makeup tips, reception looks, saree draping guides, and beauty advice by Mridhula — Chennai's luxury bridal makeup artist.",
+    "Expert bridal makeup tips, reception looks, saree draping guides, and beauty advice by Mridhula — Chennai's Professional bridal makeup artist.",
   openGraph: {
     title: "Blog — Artistry by Mridhula",
     description: "Expert bridal makeup tips and beauty guides.",

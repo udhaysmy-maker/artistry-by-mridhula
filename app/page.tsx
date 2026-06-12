@@ -12,11 +12,11 @@ import { CTASection } from "@/components/home/CTASection";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Artistry by Mridhula — Luxury Bridal Makeup Artist in Chennai",
+  title: "Artistry by Mridhula — Professional Bridal Makeup Artist in Chennai",
   description:
     "Professional bridal makeup, hairstyling and saree draping for weddings, receptions and special occasions in Chennai. Book your consultation today.",
   openGraph: {
-    title: "Artistry by Mridhula — Luxury Bridal Makeup Artist in Chennai",
+    title: "Artistry by Mridhula — Professional Bridal Makeup Artist in Chennai",
     description:
       "Professional bridal makeup, hairstyling and saree draping for weddings, receptions and special occasions.",
     url: "/",
