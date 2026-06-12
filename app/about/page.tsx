@@ -27,11 +27,11 @@ const stats = [
 const whyChoose = [
   {
     title: "Certified & Trained",
-    desc: "Formally trained in advanced bridal techniques at VLCC and Lakme Academy, with international certifications in airbrush and HD makeup.",
+    desc: "Trained in professional bridal makeup at Rajalakshmi Bridal Studio and further refined advanced techniques through exclusive workshops with renowned Chennai artist Jiya Makeup Artistry. Additional specialization includes men's grooming and makeover artistry through professional training with Men Makeover Artist.",
   },
   {
     title: "Premium Products Only",
-    desc: "Every look is crafted using MAC, Kryolan, NARS, and other professional-grade products that are skin-safe, long-lasting, and camera-ready.",
+    desc: "Every look is crafted using MAC, PAC, Estee Lauder, NARS, and other professional-grade products that are skin-safe, long-lasting, and camera-ready.",
   },
   {
     title: "Deeply Personal Approach",

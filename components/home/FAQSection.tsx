@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "How long does bridal makeup take on the morning of the wedding?",
-    a: "Full bridal makeup typically takes 2 to 3 hours, including skin preparation, base application, and the complete look. If hairstyling and saree draping are included, allow an additional 1 to 1.5 hours. I always build in time at the end for final photos and touch-up guidance before I leave.",
+    a: "A full bridal makeover takes approximately 3 hours, covering hairstyling, makeup, and saree draping from start to finish.",
   },
   {
     q: "Do you travel to my home or venue?",

@@ -42,7 +42,7 @@ const services = [
   },
   {
     title: "Saree Draping",
-    desc: "Flawless saree draping in all regional styles — Kanjivaram, Nauvari, Gujarati, and more.",
+    desc: "Bridal saree draping for Madisar, Pattu Saree, Koora Pudavai, Lehenga, and more.",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M12 22V12M12 12C12 12 7 9 7 4a5 5 0 0 1 10 0c0 5-5 8-5 8z" />

@@ -51,7 +51,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="Portfolio"
         title="Gallery"
-        subtitle="A curated selection of bridal, reception, engagement, and editorial looks."
+        subtitle="Every photograph in this gallery features makeup, hairstyling, and styling work personally completed by Artistry by Mridhula for real brides and clients."
       />
       <section className="mx-auto max-w-6xl px-5 pb-20">
         <Suspense fallback={<GallerySkeleton />}>
