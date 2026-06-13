@@ -23,11 +23,14 @@ export const metadata: Metadata = {
 
 const VALID_CATEGORIES = new Set<string>([
   "Bridal",
-  "Reception",
   "Engagement",
+  "Reception",
+  "Party",
   "Hairstyle",
   "Saree Draping",
   "Photoshoot",
+  "Groom",
+  "Bridesmaid",
 ]);
 
 const FALLBACK: GalleryItem[] = [

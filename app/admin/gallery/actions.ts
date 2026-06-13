@@ -4,7 +4,17 @@ import { revalidatePath } from "next/cache";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { requireAdmin } from "@/lib/admin/auth";
 
-const CATEGORIES = ["bridal", "engagement", "party", "editorial", "other"];
+const CATEGORIES = [
+  "Bridal",
+  "Engagement",
+  "Reception",
+  "Party",
+  "Hairstyle",
+  "Saree Draping",
+  "Photoshoot",
+  "Groom",
+  "Bridesmaid",
+];
 
 export async function createGalleryItem(
   _prev: { error: string | null; success: boolean },

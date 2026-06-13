@@ -4,7 +4,17 @@ import { useActionState, useCallback, useEffect, useRef, useState } from "react"
 import Image from "next/image";
 import { createGalleryItem } from "@/app/admin/gallery/actions";
 
-const CATEGORIES = ["bridal", "engagement", "party", "editorial", "other"];
+const CATEGORIES = [
+  "Bridal",
+  "Engagement",
+  "Reception",
+  "Party",
+  "Hairstyle",
+  "Saree Draping",
+  "Photoshoot",
+  "Groom",
+  "Bridesmaid",
+];
 
 const fieldClass =
   "w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary focus:ring-2 focus:ring-primary/20";
@@ -126,7 +136,7 @@ export function GalleryUploadForm() {
             <option value="">Select category</option>
             {CATEGORIES.map((c) => (
               <option key={c} value={c}>
-                {c.charAt(0).toUpperCase() + c.slice(1)}
+                {c}
               </option>
             ))}
           </select>
