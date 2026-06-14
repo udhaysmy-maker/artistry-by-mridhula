@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const previewImages = [
-  { src: "/assets/gallery-1.jpg", alt: "Instagram post — bridal look" },
-  { src: "/assets/gallery-2.jpg", alt: "Instagram post — reception makeup" },
-  { src: "/assets/gallery-3.jpg", alt: "Instagram post — engagement look" },
-  { src: "/assets/gallery-4.jpg", alt: "Instagram post — hairstyling" },
-  { src: "/assets/gallery-5.jpg", alt: "Instagram post — saree draping" },
-  { src: "/assets/gallery-6.jpg", alt: "Instagram post — photoshoot makeup" },
+  { src: "/assets/gallery-1.jpeg", alt: "Instagram post — bridal look" },
+  { src: "/assets/gallery-2.png", alt: "Instagram post — bridal look" },
+  { src: "/assets/gallery-3.png", alt: "Instagram post — engagement look" },
+  { src: "/assets/gallery-4.png", alt: "Instagram post — hairstyling" },
+  { src: "/assets/gallery-5.png", alt: "Instagram post — saree draping" },
+  { src: "/assets/gallery-6.png", alt: "Instagram post — photoshoot makeup" },
 ];
 
 function InstagramIcon() {
