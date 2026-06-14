@@ -3,21 +3,21 @@ const testimonials = [
     name: "Priya Ramesh",
     event: "Bridal — December 2024",
     quote:
-      "Mridhula made me feel like the most beautiful version of myself on my wedding day. My makeup stayed flawless through 12 hours of rituals, tears, and dancing. She truly understood my vision and brought it to life.",
+      "Viji made me feel like the most beautiful version of myself on my wedding day. My makeup stayed flawless through 12 hours of rituals, tears, and dancing. She truly understood my vision and brought it to life.",
     initials: "PR",
   },
   {
     name: "Ananya Krishnan",
     event: "Reception — February 2025",
     quote:
-      "I was so nervous about my reception look but Mridhula put me completely at ease. She listened to every detail, offered amazing suggestions, and the result was absolutely stunning. I've never felt so confident.",
+      "I was so nervous about my reception look but Viji put me completely at ease. She listened to every detail, offered amazing suggestions, and the result was absolutely stunning. I've never felt so confident.",
     initials: "AK",
   },
   {
     name: "Divya Subramaniam",
     event: "Engagement — October 2024",
     quote:
-      "The saree draping alone was worth every rupee. Perfect, effortless, and held throughout the entire event. The makeup was glowy and fresh — exactly what I asked for. Highly recommend Mridhula to every bride-to-be.",
+      "The saree draping alone was worth every rupee. Perfect, effortless, and held throughout the entire event. The makeup was glowy and fresh — exactly what I asked for. Highly recommend viji to every bride-to-be.",
     initials: "DS",
   },
 ];
