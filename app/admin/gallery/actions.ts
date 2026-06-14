@@ -5,7 +5,7 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { requireAdmin } from "@/lib/admin/auth";
 
 const CATEGORIES = [
-  "Bridal",
+  "Wedding",
   "Engagement",
   "Reception",
   "Party",
@@ -14,6 +14,9 @@ const CATEGORIES = [
   "Photoshoot",
   "Groom",
   "Bridesmaid",
+  "Celebrity",
+  "Baby Shower",
+  "Puberty",
 ];
 
 export async function createGalleryItem(

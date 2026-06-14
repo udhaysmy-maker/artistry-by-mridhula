@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 const VALID_CATEGORIES = new Set<string>([
-  "Bridal",
+  "Wedding",
   "Engagement",
   "Reception",
   "Party",
@@ -31,10 +31,13 @@ const VALID_CATEGORIES = new Set<string>([
   "Photoshoot",
   "Groom",
   "Bridesmaid",
+  "Celebrity",
+  "Baby Shower",
+  "Puberty",
 ]);
 
 const FALLBACK: GalleryItem[] = [
-  { src: "/assets/gallery-1.jpg", alt: "South Indian bridal makeup — rich gold and crimson look", category: "Bridal" },
+  { src: "/assets/gallery-1.jpg", alt: "South Indian bridal makeup — rich gold and crimson look", category: "Wedding" },
   { src: "/assets/gallery-2.jpg", alt: "Reception makeup — dramatic smoky eye with nude lip", category: "Reception" },
   { src: "/assets/gallery-3.jpg", alt: "Engagement look — dewy glass skin with rose petal lip", category: "Engagement" },
   { src: "/assets/gallery-4.jpg", alt: "Bridal updo with fresh jasmine flowers and gold pins", category: "Hairstyle" },
@@ -79,7 +82,7 @@ async function GalleryContent() {
         alt: row.title,
         category: (VALID_CATEGORIES.has(row.category ?? "")
           ? row.category
-          : "Bridal") as Exclude<GalleryCategory, "All">,
+          : "Wedding") as Exclude<GalleryCategory, "All">,
       }));
     }
   } catch {

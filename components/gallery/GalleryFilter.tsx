@@ -2,7 +2,7 @@
 
 export type GalleryCategory =
   | "All"
-  | "Bridal"
+  | "Wedding"
   | "Engagement"
   | "Reception"
   | "Party"
@@ -10,11 +10,14 @@ export type GalleryCategory =
   | "Saree Draping"
   | "Photoshoot"
   | "Groom"
-  | "Bridesmaid";
+  | "Bridesmaid"
+  | "Celebrity"
+  | "Baby Shower"
+  | "Puberty";
 
 export const GALLERY_CATEGORIES: GalleryCategory[] = [
   "All",
-  "Bridal",
+  "Wedding",
   "Engagement",
   "Reception",
   "Party",
@@ -23,6 +26,9 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
   "Photoshoot",
   "Groom",
   "Bridesmaid",
+  "Celebrity",
+  "Baby Shower",
+  "Puberty",
 ];
 
 interface GalleryFilterProps {

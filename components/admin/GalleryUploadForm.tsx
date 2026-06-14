@@ -5,7 +5,7 @@ import Image from "next/image";
 import { createGalleryItem } from "@/app/admin/gallery/actions";
 
 const CATEGORIES = [
-  "Bridal",
+  "Wedding",
   "Engagement",
   "Reception",
   "Party",
@@ -14,6 +14,9 @@ const CATEGORIES = [
   "Photoshoot",
   "Groom",
   "Bridesmaid",
+  "Celebrity",
+  "Baby Shower",
+  "Puberty",
 ];
 
 const fieldClass =
