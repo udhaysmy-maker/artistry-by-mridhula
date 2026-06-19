@@ -4,6 +4,8 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { createSupabaseServerClientFromCookies } from "@/lib/supabase/ssr";
 import { processGalleryImage } from "@/lib/images/process";
 
+export const maxDuration = 60;
+
 const MAX_BYTES = 15 * 1024 * 1024;
 const ALLOWED_TYPES = new Set(["image/jpeg", "image/jpg", "image/png", "image/webp"]);
 

@@ -70,14 +70,22 @@ export function GalleryUploadForm() {
       const fd = new FormData();
       fd.append("file", file);
       const res = await fetch("/api/admin/gallery", { method: "POST", body: fd });
+      if (!res.ok) {
+        let message = "Upload failed. Please try again.";
+        try {
+          const json = (await res.json()) as { error?: string };
+          if (json.error) message = json.error;
+        } catch {
+          // Server returned non-JSON (e.g. HTML 500 page) — keep default message
+        }
+        throw new Error(message);
+      }
       const json = (await res.json()) as {
         originalUrl?: string;
         originalWebpUrl?: string;
         thumbnailUrl?: string;
         thumbnailWebpUrl?: string;
-        error?: string;
       };
-      if (!res.ok) throw new Error(json.error ?? "Upload failed");
       setUpload({
         status: "done",
         originalUrl:     json.originalUrl!,
