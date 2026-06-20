@@ -17,7 +17,10 @@ export async function PortfolioPreview() {
   try {
     const rows = await getFeaturedGalleryItems(6);
     if (rows.length > 0) {
-      images = rows.map((r) => ({ src: r.image_url, alt: r.title }));
+      images = rows.map((r) => ({
+        src: r.thumbnail_url ?? r.image_url,
+        alt: r.title,
+      }));
     }
   } catch {
     // Supabase not configured — serve fallback placeholder images
@@ -45,9 +48,9 @@ export async function PortfolioPreview() {
               <Image
                 src={img.src}
                 alt={img.alt}
-                width={1024}
-                height={1280}
-                loading={i < 3 ? "eager" : "lazy"}
+                width={400}
+                height={500}
+                priority={i < 3}
                 className="h-80 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
